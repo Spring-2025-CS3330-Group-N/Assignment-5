@@ -24,7 +24,7 @@ public class ShelterController {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int selectionIndex = view.getSelectedPetIndex();
-				if (selectionIndex > 0) {
+				if (selectionIndex >= 0) {
 					Pet pet = model.getPet(selectionIndex);
 					model.removePet(pet);
 					view.setPetListOptions(model.getNameList());
@@ -36,7 +36,7 @@ public class ShelterController {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int selectionIndex = view.getSelectedPetIndex();
-				if (selectionIndex > 0) {
+				if (selectionIndex >= 0) {
 					Pet pet = model.getPet(selectionIndex);
 					PetDetailsView detailsView = new PetDetailsView();
 					detailsView.setName(pet.getName());
