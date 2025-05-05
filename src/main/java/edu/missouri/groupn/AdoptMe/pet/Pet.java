@@ -31,7 +31,7 @@ public abstract class Pet {
 		this.type = type;
 		this.species = species;
 		this.age = age;
-		this.adopted = false;
+		this.adopted = adopted;
 	}
 	/**
 	 * This getter method retrieves the id of the pet it's called upon.
