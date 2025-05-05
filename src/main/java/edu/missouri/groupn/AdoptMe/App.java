@@ -1,9 +1,19 @@
 package edu.missouri.groupn.AdoptMe;
 
-import com.google.gson.Gson;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.missouri.groupn.AdoptMe.pet.Pet;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        List<Pet> pets = new ArrayList<Pet>();
+		try {
+			pets = Database.loadFromFile("src/main/resources/pets.json");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        System.out.println(pets);
     }
 }
