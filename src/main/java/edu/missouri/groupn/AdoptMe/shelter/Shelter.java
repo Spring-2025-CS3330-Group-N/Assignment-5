@@ -1,8 +1,10 @@
 package edu.missouri.groupn.AdoptMe.shelter;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import edu.missouri.groupn.AdoptMe.pet.Pet;
+import edu.missouri.groupn.AdoptMe.pet.comparator.*;
 
 public class Shelter <T extends Pet> {
 	private ArrayList<T> petList;
@@ -78,8 +80,30 @@ public class Shelter <T extends Pet> {
 		return true;
 	}
 	
-	// sortByName() -- use comparable
-	// sortByAge() -- use comperator
-	// sortBySpecies() -- use comperator
+	/**
+	 * This method sorts the shelter's list of pets by name.
+	 * @return Updated pet list sorted by name
+	 */
+	public ArrayList<T> sortByName() {
+		Collections.sort(this.petList);
+		return this.petList;
+	}
+
+	/**
+	 * This method sorts the shelter's list of pets by age.
+	 * @return Updated pet list sorted by age
+	 */
+	public ArrayList<T> sortByAge() {
+		Collections.sort(this.petList, new PetAgeComparator());
+		return this.petList;
+	}
 	
+	/**
+	 * This method sorts the shelter's list of pets by species.
+	 * @return Updated pet list sorted by species
+	 */
+	public ArrayList<T> sortBySpecies() {
+		Collections.sort(this.petList, new PetSpeciesComparator());
+		return this.petList;
+	}
 }
