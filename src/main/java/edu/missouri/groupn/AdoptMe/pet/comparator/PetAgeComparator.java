@@ -1,7 +1,8 @@
 package edu.missouri.groupn.AdoptMe.pet.comparator;
 
-import edu.missouri.groupn.AdoptMe.pet.Pet;
 import java.util.Comparator;
+
+import edu.missouri.groupn.AdoptMe.models.Pet;
 
 /**
  * This implementation of Comparator sorts pets according to their age.

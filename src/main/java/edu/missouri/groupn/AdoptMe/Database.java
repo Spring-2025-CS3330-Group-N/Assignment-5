@@ -9,8 +9,8 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import edu.missouri.groupn.AdoptMe.pet.NonExoticPet;
-import edu.missouri.groupn.AdoptMe.pet.Pet;
+import edu.missouri.groupn.AdoptMe.models.NonExoticPet;
+import edu.missouri.groupn.AdoptMe.models.Pet;
 
 public class Database {
 	public static List<Pet> loadFromFile(String fileName) throws IOException {

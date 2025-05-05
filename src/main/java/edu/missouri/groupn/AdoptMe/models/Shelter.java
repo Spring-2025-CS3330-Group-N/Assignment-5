@@ -1,13 +1,14 @@
-package edu.missouri.groupn.AdoptMe.shelter;
+package edu.missouri.groupn.AdoptMe.models;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
-import edu.missouri.groupn.AdoptMe.pet.Pet;
 import edu.missouri.groupn.AdoptMe.pet.comparator.*;
 
 public class Shelter <T extends Pet> {
-	private ArrayList<T> petList;
+	private List<T> petList;
 	
 	/**
 	 * This constructor creates an instance of a Shelter.
@@ -15,6 +16,10 @@ public class Shelter <T extends Pet> {
 	public Shelter() {
 		this.petList = new ArrayList<>();
 		// call a function to import pets from JSON file / database and add them to list?
+	}
+	
+	public Shelter(List<T> pets) {
+		this.petList = pets;
 	}
 
 	// method to import pets from JSON file / database
@@ -66,6 +71,15 @@ public class Shelter <T extends Pet> {
 		return false;
 	}
 	
+	public Pet getPet(int index) {
+		Pet pet = petList.get(index);
+		return pet;
+	}
+	
+	public List<String> getNameList() {
+		return petList.stream().map(pet -> pet.getName()).collect(Collectors.toList());
+	}
+	
 	/**
 	 * adoptPet():
 	 * This method checks if a pet is available for adoption. If so, it sets a pet's adoption status to be true.
@@ -84,7 +98,7 @@ public class Shelter <T extends Pet> {
 	 * This method sorts the shelter's list of pets by name.
 	 * @return Updated pet list sorted by name
 	 */
-	public ArrayList<T> sortByName() {
+	public List<T> sortByName() {
 		Collections.sort(this.petList);
 		return this.petList;
 	}
@@ -93,7 +107,7 @@ public class Shelter <T extends Pet> {
 	 * This method sorts the shelter's list of pets by age.
 	 * @return Updated pet list sorted by age
 	 */
-	public ArrayList<T> sortByAge() {
+	public List<T> sortByAge() {
 		Collections.sort(this.petList, new PetAgeComparator());
 		return this.petList;
 	}
@@ -102,7 +116,7 @@ public class Shelter <T extends Pet> {
 	 * This method sorts the shelter's list of pets by species.
 	 * @return Updated pet list sorted by species
 	 */
-	public ArrayList<T> sortBySpecies() {
+	public List<T> sortBySpecies() {
 		Collections.sort(this.petList, new PetSpeciesComparator());
 		return this.petList;
 	}

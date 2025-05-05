@@ -1,4 +1,4 @@
-package edu.missouri.groupn.AdoptMe.pet;
+package edu.missouri.groupn.AdoptMe.models;
 
 import java.util.Comparator;
 
@@ -6,7 +6,7 @@ import java.util.Comparator;
  * This abstract class will be used for all pets in the adoption shelter.
  * Each pet requires values for id, name, type, species, age, and adoption status.
  */
-public abstract class Pet implements Comparable<Pet>, Comparator<Pet> {
+public abstract class Pet implements Comparable<Pet> {
 
 	private int id;
 	private String name;
