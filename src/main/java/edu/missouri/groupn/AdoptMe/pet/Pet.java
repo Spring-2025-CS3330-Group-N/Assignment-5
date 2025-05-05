@@ -118,4 +118,15 @@ public abstract class Pet {
 		this.adopted = adopted;
 	}
 	
+	/**
+	 * Returns all pet information on the pet it's called upon.
+	 */
+	@Override
+	public String toString() {
+		return "Pet [id=" + id + ", name=" + name + ", type=" + type + ", species=" + species + ", age=" + age
+				+ ", adopted=" + adopted + "]";
+	}
+	
+	
+	
 }
